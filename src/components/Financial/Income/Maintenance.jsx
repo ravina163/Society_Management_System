@@ -30,7 +30,7 @@ const Maintenance = () => {
   ];
 
   return (
-    <div className="flex bg-[#FDF5FB]">
+    <div className="flex bg-[#F0F5FB]">
       <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
         <div className="container mx-auto">
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
@@ -87,16 +87,16 @@ const Maintenance = () => {
             <table className="min-w-full divide-y divide-gray-200 ">
                 <thead className="bg-[#F1F0FF] rounded-t-md" >
                   <tr>
-                    <th className="px-6 py-2 text-left text-sm font-medium text-[#202224]  tracking-wider">Name</th>
-                    <th className="px-6 py-2  text-sm font-medium text-[#202224]  tracking-wider">Unit Number</th>
-                    <th className="px-6 py-2  text-sm font-medium text-[#202224]  tracking-wider">Date</th>
-                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  tracking-wider">Status</th>
-                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  tracking-wider">Phone Number</th>
-                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  tracking-wider">Amount</th>
-                    <th className="px-6 py-2  text-sm font-medium text-[#202224]  tracking-wider">Penalty</th>
-                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  tracking-wider">Payment Status</th>
-                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  tracking-wider">Payment</th>
-                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  tracking-wider">Action</th>
+                    <th className="px-6 py-2 text-left text-sm font-medium text-[#202224]  font-poppins tracking-wider">Name</th>
+                    <th className="px-6 py-2  text-sm font-medium text-[#202224]  font-poppins tracking-wider">Unit Number</th>
+                    <th className="px-6 py-2  text-sm font-medium text-[#202224]  font-poppins tracking-wider">Date</th>
+                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  font-poppins tracking-wider">Status</th>
+                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  font-poppins tracking-wider">Phone Number</th>
+                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  font-poppins tracking-wider">Amount</th>
+                    <th className="px-6 py-2  text-sm font-medium text-[#202224]  font-poppins tracking-wider">Penalty</th>
+                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  font-poppins tracking-wider">Payment Status</th>
+                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  font-poppins tracking-wider">Payment</th>
+                    <th className="px-6 py-2 text-sm font-medium text-[#202224]  font-poppins tracking-wider">Action</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">

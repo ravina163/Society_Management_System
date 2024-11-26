@@ -69,7 +69,7 @@ const DashboardPage = () => {
   ];
 
   return (
-    <div className=" bg-[#F6F8FB] p-4 md:p-6">
+    <div className=" bg-[#F0F5FB] p-4 md:p-6">
       <div className="mx-auto max-w-8xl space-y-6">
           {/* Stats Cards */}
           <div className="grid grid-cols-1 gap-6 mb-6 sm:grid-cols-2 lg:grid-cols-4">

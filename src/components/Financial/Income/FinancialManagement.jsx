@@ -70,7 +70,7 @@ export default function FinancialManagement() {
   ];
 
   return (
-    <div className="flex h-screen bg-gray-100 p-4">
+    <div className="flex h-screen bg-[#F0F5FB] p-4">
     <div className="flex flex-col space-y-4 w-full">
         {/* Tab Buttons */}
         <div className="flex ml-10">

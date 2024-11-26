@@ -80,8 +80,8 @@ export default function Note() {
   const toggleDropdown = (id) => setDropdownOpen(dropdownOpen === id ? null : id);
 
   return (
-    <div className="flex bg-[#FDF5FB]">
-      <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+    <div className="flex bg-[#F0F5FB]">
+      <main className="flex-1 overflow-x-hidden overflow-y-auto ">
         <div className="container mx-auto">
           <div className=" bg-white p-5 rounded-lg shadow mt-4">
             <div className="flex justify-between items-center ">

@@ -95,7 +95,7 @@ export default function Expense() {
   };
 
   return (
-    <div className="flex bg-[#FDF5FB]">
+    <div className="flex bg-[#F0F5FB]">
       <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
         <div className="container mx-auto">
           <div className="bg-white rounded-lg shadow-md mt-6">
@@ -119,12 +119,12 @@ export default function Expense() {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-[#F1F0FF] rounded-t-md">
                   <tr>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000] tracking-wider">Title</th>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000] tracking-wider">Description</th>
-                    <th className="px-6 py-3 text-sm font-medium text-[#000000] tracking-wider">Date</th>
-                    <th className="px-6 py-3 text-sm font-medium text-[#000000] tracking-wider">Amount</th>
-                    <th className="px-6 py-3 text-sm font-medium text-[#000000] tracking-wider">Bill Format</th>
-                    <th className="px-6 py-3 text-sm font-medium text-[#000000] tracking-wider">Actions</th>
+                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000] font-poppins tracking-wider">Title</th>
+                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000] font-poppins tracking-wider">Description</th>
+                    <th className="px-6 py-3 text-sm font-medium text-[#000000] font-poppins tracking-wider">Date</th>
+                    <th className="px-6 py-3 text-sm font-medium text-[#000000] font-poppins tracking-wider">Amount</th>
+                    <th className="px-6 py-3 text-sm font-medium text-[#000000] font-poppins tracking-wider">Bill Format</th>
+                    <th className="px-6 py-3 text-sm font-medium text-[#000000] font-poppins tracking-wider">Actions</th>
                   </tr>
                 </thead>
                 <tbody>

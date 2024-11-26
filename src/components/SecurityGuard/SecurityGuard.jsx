@@ -74,8 +74,8 @@ export default function SecurityGuardManagement() {
 
   return (
 
-    <div className="flex bg-[#FDF5FB]">
-    <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+    <div className="flex bg-[#F0F5FB]">
+    <main className="flex-1 overflow-x-hidden overflow-y-auto ">
       <div className="container mx-auto py-8">
         <div className="bg-white rounded-lg shadow overflow-hidden">
         <div className="px-6 py-5">
@@ -96,27 +96,27 @@ export default function SecurityGuardManagement() {
 
           <div className="overflow-x-auto px-6 py-1">
             <table className="min-w-full rounded-t-lg divide-y divide-gray-200">
-              <thead className="bg-[#F1F0FF]">
+              <thead className="bg-[#5678E9]/10">
                 <tr>
-                <th className="px-6 py-4 text-left text-sm font-medium text-[#000000] tracking-wider">
+                <th className="px-6 py-4 text-left text-sm font-medium text-[#000000] font-poppins tracking-wider">
                 Security Guard Name
                   </th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-[#000000] tracking-wider">
+                  <th className="px-6 py-3 text-left text-sm font-medium text-[#000000] font-poppins tracking-wider">
                   Phone Number
                   </th>
-                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] tracking-wider">
+                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] font-poppins tracking-wider">
                   Select Shift
                   </th>
-                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] tracking-wider">
+                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] font-poppins tracking-wider">
                   Shift Date
                   </th>
-                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] tracking-wider">
+                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] font-poppins tracking-wider">
                   Shift Time
                   </th>
-                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] tracking-wider">
+                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] font-poppins tracking-wider">
                   Gender
                   </th>
-                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] tracking-wider">
+                  <th className="px-6 py-3 text-center text-sm font-medium text-[#000000] font-poppins tracking-wider">
                   Action
                   </th>
                 </tr>

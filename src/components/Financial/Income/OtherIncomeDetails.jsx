@@ -30,7 +30,7 @@ const members = [
 
 export default function OtherIncomeDetails() {
   return (
-    <div className=" flex bg-[#FDF5FB]">
+    <div className=" flex bg-[#F0F5FB]">
         {/* Main content */}
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
         <div className="container mx-auto py-8">
@@ -42,12 +42,12 @@ export default function OtherIncomeDetails() {
               <table className="min-w-full rounded-t-lg divide-y divide-gray-200">
                 <thead  className="bg-[#F1F0FF] ">
                   <tr >
-                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  tracking-wider">Unit Number</th>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  tracking-wider">Payment Date</th>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  tracking-wider">Tenant/Owner Status</th>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  tracking-wider">Phone Number</th>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  tracking-wider">Amount</th>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  tracking-wider">Payment</th>
+                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  font-poppins tracking-wider">Unit Number</th>
+                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  font-poppins tracking-wider">Payment Date</th>
+                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  font-poppins tracking-wider">Tenant/Owner Status</th>
+                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  font-poppins tracking-wider">Phone Number</th>
+                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  font-poppins tracking-wider">Amount</th>
+                    <th className="px-6 py-3 text-left text-sm font-medium text-[#000000]  font-poppins tracking-wider">Payment</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">

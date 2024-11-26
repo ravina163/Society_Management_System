@@ -1,4 +1,3 @@
-
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -13,6 +12,8 @@ import SecurityVisitor from './components/SecurityManagement/SecurityVisitor.jsx
 import SecurityProtocols from './components/SecurityManagement/SecurityProtocols.jsx'
 import SecurityGuard from './components/SecurityGuard/SecurityGuard.jsx'
 import Announcement from './components/Announcement/Announcement.jsx'
+import CommunityDiscussion from './components/CommunityDiscussion/CommunityDiscussion.jsx'
+import Complaint from './components/Complaint/ComplaintTracking/ComplaintManagement.jsx'
 
 
 function App() {
@@ -38,6 +39,8 @@ function App() {
               <Route path="/facility-management" element={<FacilityManagement />} />
 
               {/* Complaint Tracking Routes */}
+              <Route path="/create-complaint" element={<Complaint />} />
+              <Route path="/request-tracking" element={<FacilityManagement />} />
 
               {/* Security Management Routes */}
               <Route path="/security-visitor" element={<SecurityVisitor />} />
@@ -46,6 +49,9 @@ function App() {
               {/* Security Guard Routes */}
               <Route path="/security-guard" element={<SecurityGuard />} />
               <Route path="/announcement" element={<Announcement />} />
+
+              {/* resident panel */}
+              <Route path="/community" element={<CommunityDiscussion />} />
 
               {/* Default Route */}
               <Route path="/" element={<Dashboard />} />

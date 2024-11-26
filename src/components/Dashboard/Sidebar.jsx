@@ -9,11 +9,19 @@ import { PiLineVerticalBold } from "react-icons/pi";
 
 export default function Sidebar() {
   const [activePage, setActivePage] = useState('Dashboard');
+  const [openSubmenus, setOpenSubmenus] = useState({});
   const navigate = useNavigate();
 
   const handleItemClick = (page, path) => {
     setActivePage(page);
     navigate(path);
+  };
+
+  const toggleSubmenu = (menu) => {
+    setOpenSubmenus((prev) => ({
+      ...prev,
+      [menu]: !prev[menu],
+    }));
   };
 
   return (
@@ -54,28 +62,31 @@ export default function Sidebar() {
           <MenuItem 
             icon={<FaDollarSign className="h-6 w-6" />} 
             label="Financial Management" 
-            active={activePage === 'Financial Management'} 
-            onClick={() => handleItemClick('Financial Management', '/financial-management/income')} 
+            active={activePage.startsWith('Financial Management') || openSubmenus['Financial Management']} 
+            onClick={() => toggleSubmenu('Financial Management')} 
           />
-          {activePage === 'Financial Management' && (
-            <div className="pl-6 space-y-2 text-gray-700 hover:text-black">
+          {openSubmenus['Financial Management'] && (
+            <div className="pl-6 space-y-2 text-gray-700">
               <MenuItem 
                 icon={<PiLineVerticalBold className="h-5 w-5" />} 
                 label="Income" 
                 active={activePage === 'Income'} 
                 onClick={() => handleItemClick('Income', '/financial-management/income')} 
+                isSubmenu
               />
               <MenuItem 
                 icon={<PiLineVerticalBold className="h-5 w-5" />} 
                 label="Expense" 
                 active={activePage === 'Expense'} 
                 onClick={() => handleItemClick('Expense', '/financial-management/expense')} 
+                isSubmenu
               />
               <MenuItem 
                 icon={<PiLineVerticalBold className="h-5 w-5" />} 
                 label="Note" 
                 active={activePage === 'Note'} 
                 onClick={() => handleItemClick('Note', '/financial-management/note')} 
+                isSubmenu
               />
             </div>
           )}
@@ -93,22 +104,24 @@ export default function Sidebar() {
           <MenuItem 
             icon={<FaExclamationTriangle className="h-6 w-6" />} 
             label="Complaint Tracking" 
-            active={activePage === 'Complaint Tracking'} 
-            onClick={() => handleItemClick('Complaint Tracking', '/create-complaint')}  
+            active={activePage.startsWith('Complaint Tracking') || openSubmenus['Complaint Tracking']} 
+            onClick={() => toggleSubmenu('Complaint Tracking')}  
           />
-          {activePage === 'Complaint Tracking' && (
-            <div className="pl-6 space-y-2 text-gray-700 hover:text-black">
+          {openSubmenus['Complaint Tracking'] && (
+            <div className="pl-6 space-y-2 text-gray-700">
               <MenuItem 
                 icon={<PiLineVerticalBold className="h-5 w-5" />} 
                 label="Create Complaint" 
                 active={activePage === 'Create'} 
                 onClick={() => handleItemClick('Create', '/create-complaint')} 
+                isSubmenu
               />
               <MenuItem 
                 icon={<PiLineVerticalBold className="h-5 w-5" />} 
                 label="Request Tracking" 
                 active={activePage === 'Tracking'} 
                 onClick={() => handleItemClick('Tracking', '/request-tracking')} 
+                isSubmenu
               />
             </div>
           )}
@@ -119,22 +132,24 @@ export default function Sidebar() {
           <MenuItem 
             icon={<FaShieldAlt className="h-6 w-6" />} 
             label="Security Management" 
-            active={activePage === 'Security Management'} 
-            onClick={() => handleItemClick('Security Management', '/security-visitor')}  
+            active={activePage.startsWith('Security Management') || openSubmenus['Security Management']} 
+            onClick={() => toggleSubmenu('Security Management')}  
           />
-          {activePage === 'Security Management' && (
-            <div className="pl-6 space-y-2 text-gray-700 hover:text-black">
+          {openSubmenus['Security Management'] && (
+            <div className="pl-6 space-y-2 text-gray-700">
               <MenuItem 
                 icon={<PiLineVerticalBold className="h-5 w-5" />} 
                 label="Visitor Logs" 
                 active={activePage === 'Visitor'} 
                 onClick={() => handleItemClick('Visitor', '/security-visitor')} 
+                isSubmenu
               />
               <MenuItem 
                 icon={<PiLineVerticalBold className="h-5 w-5" />} 
                 label="Security Protocols" 
                 active={activePage === 'Security'} 
                 onClick={() => handleItemClick('Security', '/security-protocols')} 
+                isSubmenu
               />
             </div>
           )}
@@ -152,6 +167,13 @@ export default function Sidebar() {
           active={activePage === 'Announcement'} 
           onClick={() => handleItemClick('Announcement', '/announcement')} 
         />
+
+        <MenuItem 
+          icon={<FaBullhorn className="h-6 w-6" />} 
+          label="Community" 
+          active={activePage === 'Community'} 
+          onClick={() => handleItemClick('Community', '/community')} 
+        />
       </nav>
 
       {/* Logout */}
@@ -167,15 +189,14 @@ export default function Sidebar() {
   );
 }
 
-function MenuItem({ icon, label, active, onClick, textColor }) {
+function MenuItem({ icon, label, active, onClick, textColor, isSubmenu }) {
   return (
     <div
       className={`flex items-center space-x-3 p-2 rounded-lg cursor-pointer 
-        ${active ? 'text-white' : 'hover:bg-gray-100'} 
+        ${isSubmenu 
+          ? (active ? 'text-black' : 'hover:text-gray-800') 
+          : (active ? 'bg-gradient-to-r from-[#FE512E] to-[#F09619] text-white' : 'hover:bg-gray-100')} 
         ${textColor || 'text-gray-700'}`}
-      style={{
-        background: active ? 'linear-gradient(to right, #FE512E, #F09619)' : 'none',
-      }}
       onClick={onClick}
     >
       {icon}
