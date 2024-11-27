@@ -1,34 +1,33 @@
 import React, { useState } from 'react';
 
-const EditComplaintModal = ({ complaint, onSave, onCancel }) => {
-  const [complainantName, setComplainantName] = useState(complaint.complainantName);
-  const [complaintName, setComplaintName] = useState(complaint.complaintName);
-  const [description, setDescription] = useState(complaint.description);
-  const [wing, setWing] = useState(complaint.wing);
-  const [unit, setUnit] = useState(complaint.unit);
-  const [priority, setPriority] = useState(complaint.priority);
-  const [status, setStatus] = useState(complaint.status);
+const AddRequestModal = ({ onSave, onCancel }) => {
+  const [requesterName, setRequesterName] = useState('');
+  const [RequestName, setRequestName] = useState('');
+  const [date, setDate] = useState('');
+  const [wing, setWing] = useState('');
+  const [unit, setUnit] = useState('');
+  const [priority, setPriority] = useState('Medium');
+  const [status, setStatus] = useState('Open');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const updatedComplaint = {
-      ...complaint,
-      complainantName,
-      complaintName,
-      description,
+    const newRequest = {
+      requesterName,
+      RequestName,
+      date,
       wing,
       unit,
       priority,
       status,
     };
-    onSave(updatedComplaint);
+    onSave(newRequest);
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg max-w-sm w-full p-5">
 
-        <h2 className="text-xl font-semibold font-poppins">Edit Complaint</h2>
+        <h2 className="text-xl font-semibold font-poppins">Create Request</h2>
         <hr className="border-[#F4F4F4] mb-4 mt-4" />
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -36,29 +35,34 @@ const EditComplaintModal = ({ complaint, onSave, onCancel }) => {
             <label className="block text-sm font-medium text-[#202224] font-poppins">Complainer Name<span className='text-red-500'>*</span></label>
             <input
               type="text"
-              value={complainantName}
-              onChange={(e) => setComplainantName(e.target.value)}
+              value={requesterName}
+              onChange={(e) => setRequesterName(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border rounded-md border-[#A7A7A7]/40 shadow-sm "
+              placeholder="Enter Name"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-[#202224] font-poppins">Complaint Name<span className='text-red-500'>*</span></label>
+            <label className="block text-sm font-medium text-[#202224] font-poppins">Request Name<span className='text-red-500'>*</span></label>
             <input
               type="text"
-              value={complaintName}
-              onChange={(e) => setComplaintName(e.target.value)}
+              value={RequestName}
+              onChange={(e) => setRequestName(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border rounded-md border-[#A7A7A7]/40 shadow-sm "
+              placeholder="Enter Name"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-[#202224] font-poppins">Description<span className='text-red-500'>*</span></label>
-            <textarea
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border rounded-md border-[#A7A7A7]/40 shadow-sm "
-              rows={3}
+            <label className="block text-sm font-medium text-[#202224] font-poppins">
+              Request Date<span className="text-red-500">*</span>
+            </label>
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="mt-1 block w-full px-3 py-2 border rounded-md border-[#A7A7A7]/40 shadow-sm"
             />
           </div>
+
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-[#202224] font-poppins">Wing<span className='text-red-500'>*</span></label>
@@ -67,6 +71,7 @@ const EditComplaintModal = ({ complaint, onSave, onCancel }) => {
                 value={wing}
                 onChange={(e) => setWing(e.target.value)}
                 className="mt-1 block w-full px-3 py-2 border rounded-md border-[#A7A7A7]/40 shadow-sm "
+                placeholder="Enter Wing"
               />
             </div>
             <div>
@@ -76,6 +81,7 @@ const EditComplaintModal = ({ complaint, onSave, onCancel }) => {
                 value={unit}
                 onChange={(e) => setUnit(e.target.value)}
                 className="mt-1 block w-full px-3 py-2 border rounded-md border-[#A7A7A7]/40 shadow-sm "
+                placeholder="Enter Unit"
               />
             </div>
           </div>
@@ -98,7 +104,7 @@ const EditComplaintModal = ({ complaint, onSave, onCancel }) => {
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-[#202224] font-poppins">Status<span className='text-red-500'>*</span></label>
+            <label className="block text-sm font-medium text-[#202224] font-poppins" >Status<span className='text-red-500'>*</span></label>
             <div className="mt-2 space-x-4">
               {['Open', 'Pending', 'Solve'].map((statusOption) => (
                 <div
@@ -117,19 +123,21 @@ const EditComplaintModal = ({ complaint, onSave, onCancel }) => {
                 </div>
               ))}
             </div>
+
           </div>
 
-          <div className="py-3 flex space-x-2">
+
+          <div className=" py-3 flex space-x-2 ">
             <button
               type="button"
               onClick={onCancel}
-              className="w-1/2 inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 sm:text-sm"
+              className="w-1/2 inline-flex justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm sm:text-sm"
             >
               Cancel
             </button>
             <button
-              type="submit"
-              className="w-1/2 inline-flex justify-center rounded-md text-gray-700 px-4 py-2 text-base font-medium shadow-sm  sm:text-sm bg-gradient-to-r from-[#FE512E] to-[#F09619] text-white"
+              type="button"
+              className="w-1/2 inline-flex justify-center rounded-md text-gray-700 bg-[#F6F8FB] px-4 py-2 text-base font-medium shadow-sm  sm:text-sm hover:bg-gradient-to-r hover:from-[#FE512E] hover:to-[#F09619] hover:text-white"
               style={{
                 transition: "background 0.3s ease",
               }}
@@ -137,10 +145,12 @@ const EditComplaintModal = ({ complaint, onSave, onCancel }) => {
               Save
             </button>
           </div>
+
+
         </form>
       </div>
     </div>
   );
 };
 
-export default EditComplaintModal;
+export default AddRequestModal;

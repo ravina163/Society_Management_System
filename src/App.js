@@ -14,6 +14,7 @@ import SecurityGuard from './components/SecurityGuard/SecurityGuard.jsx'
 import Announcement from './components/Announcement/Announcement.jsx'
 import CommunityDiscussion from './components/CommunityDiscussion/CommunityDiscussion.jsx'
 import Complaint from './components/Complaint/ComplaintTracking/ComplaintManagement.jsx'
+import RequestTracking from './components/Complaint/RequestTracking/RequestManagement.jsx'
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
 
               {/* Complaint Tracking Routes */}
               <Route path="/create-complaint" element={<Complaint />} />
-              <Route path="/request-tracking" element={<FacilityManagement />} />
+              <Route path="/request-tracking" element={<RequestTracking />} />
 
               {/* Security Management Routes */}
               <Route path="/security-visitor" element={<SecurityVisitor />} />

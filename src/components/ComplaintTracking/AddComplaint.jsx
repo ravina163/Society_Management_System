@@ -121,9 +121,7 @@ const AddComplaintModal = ({ onSave, onCancel }) => {
                 </div>
               ))}
             </div>
-
           </div>
-        
 
           <div className=" py-3 flex space-x-2 ">
             <button
@@ -143,8 +141,6 @@ const AddComplaintModal = ({ onSave, onCancel }) => {
               Save
             </button>
           </div>
-
-          
         </form>
       </div>
     </div>
